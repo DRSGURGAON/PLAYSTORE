@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base theme for every app: apps use parent="Theme.MyMediaNation". -->
-    <style name="Theme.MyMediaNation" parent="android:Theme.Material.Light.DarkActionBar">
+    <!-- Base theme for every app: apps use parent="Theme.MyMediaNation".
+         No window action bar: each screen puts an android.widget.Toolbar in its layout and calls
+         setActionBar(), and handles window insets (Android 15+ is always edge-to-edge). -->
+    <style name="Theme.MyMediaNation" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:colorPrimary">@color/primary</item>
         <item name="android:colorPrimaryDark">@color/primary_dark</item>
         <item name="android:colorAccent">@color/accent</item>

@@ -8,17 +8,20 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.text.format.DateUtils
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.WindowInsets
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.Toolbar
 import com.mymedianation.core.About
 
 class MainActivity : Activity() {
@@ -37,6 +40,8 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setActionBar(findViewById(R.id.toolbar))
+        applyEdgeToEdgeInsets()
         history = HistoryStore(this)
 
         ccInput = findViewById(R.id.country_code)
@@ -75,6 +80,24 @@ class MainActivity : Activity() {
         super.onResume()
         refreshAppButtons()
         renderHistory()
+    }
+
+    /**
+     * Android 15+ draws apps edge-to-edge (forced for targetSdk 35+): keep the toolbar clear of the
+     * status bar and the content clear of the navigation bar and the keyboard. Older versions
+     * fit the window to the system bars themselves and resize for the keyboard (adjustResize).
+     */
+    private fun applyEdgeToEdgeInsets() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) return
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val scroll = findViewById<View>(R.id.scroll)
+        findViewById<View>(R.id.root).setOnApplyWindowInsetsListener { _, insets ->
+            val bars = insets.getInsets(WindowInsets.Type.systemBars() or WindowInsets.Type.displayCutout())
+            val ime = insets.getInsets(WindowInsets.Type.ime())
+            toolbar.setPadding(bars.left, bars.top, bars.right, 0)
+            scroll.setPadding(bars.left, 0, bars.right, maxOf(bars.bottom, ime.bottom))
+            insets
+        }
     }
 
     /** Text shared to the app, or selected text via the app option in the copy/paste menu. */
@@ -178,7 +201,9 @@ class MainActivity : Activity() {
         entries.forEach { e ->
             val row = layoutInflater.inflate(R.layout.item_history, historyList, false)
             row.findViewById<TextView>(R.id.h_number).text = PhoneUtils.pretty(e.number)
-            val ago = DateUtils.getRelativeTimeSpanString(e.time, System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS)
+            val now = System.currentTimeMillis()
+            val ago = if (now - e.time < DateUtils.MINUTE_IN_MILLIS) getString(R.string.just_now)
+                else DateUtils.getRelativeTimeSpanString(e.time, now, DateUtils.MINUTE_IN_MILLIS)
             val app = getString(if (e.app == "B") R.string.label_business else R.string.label_whatsapp)
             row.findViewById<TextView>(R.id.h_meta).text = getString(R.string.history_meta, app, ago)
             row.setOnClickListener {

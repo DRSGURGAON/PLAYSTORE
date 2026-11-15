@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Toolbar inside the layout (not the window action bar) so the screen lays out correctly
+     edge-to-edge on Android 15+ (enforced for targetSdk 35+). Insets are applied in MainActivity. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:elevation="4dp"
+        android:minHeight="?android:actionBarSize"
+        android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar" />
+
+<ScrollView
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:clipToPadding="false"
     android:fillViewport="true">
 
     <LinearLayout
@@ -47,7 +67,10 @@
                 android:imeOptions="actionGo"
                 android:importantForAutofill="no"
                 android:inputType="phone"
-                android:textSize="20sp" />
+                android:textSize="20sp">
+                <!-- Cursor starts in the number field, not the country code. -->
+                <requestFocus />
+            </EditText>
         </LinearLayout>
 
         <TextView
@@ -156,3 +179,4 @@
             android:orientation="vertical" />
     </LinearLayout>
 </ScrollView>
+</LinearLayout>

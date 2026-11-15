@@ -10,7 +10,8 @@ All of My Media Nation's Android apps live in this one repository, with shared c
 
 ```
 apps/<app>/          one Android app per folder (its own name, icon, version, code)
-core/                shared by every app: brand colours, base theme (Theme.MyMediaNation), About dialog
+core/                shared by every app: brand colours, base theme (Theme.MyMediaNation, no window
+                     action bar: use an in-layout Toolbar + insets, see MainActivity), About dialog
 buildSrc/Company.kt  shared settings: ID prefix, SDK levels, upload-key signing
 play/<app>/          Play Store listing text (en-IN, hi-IN), graphics, Play Console form answers
 docs/                GitHub Pages site: privacy policies (docs/privacy/<app>.html)
@@ -46,6 +47,6 @@ That works for testing, but Play rejects it. One upload key is used for all apps
 
 ## Verification status
 
-What'z Direct Chat: 16 unit tests pass, Android lint has 0 errors, and the release AAB/APK build and sign
-with the upload key. **Not yet run on a real phone.** See the device checklist in
-`apps/direct-chat/README.md` before sending it to testers.
+What'z Direct Chat: 39 tests pass (16 logic tests and 23 Robolectric tests on Android 8, 14 and 15),
+Android lint has 0 errors, and the release AAB/APK is signed with the upload key. **Not yet run on a real phone.**
+See the device checklist in `apps/direct-chat/README.md` before sending it to testers.

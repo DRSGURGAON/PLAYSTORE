@@ -22,8 +22,12 @@ Opens a WhatsApp or WhatsApp Business chat with any number **without saving it t
 | Share chat link | Shares the `wa.me` link, which also works when neither app is installed |
 | About | Has the "not affiliated with WhatsApp/Meta" disclaimer |
 
-Logic that can be tested without a phone is in `PhoneUtils.kt`, which has no Android
-imports, and is covered by `PhoneUtilsTest.kt` (16 tests).
+Tests (`./gradlew :apps:direct-chat:test`):
+- `PhoneUtilsTest` (16): number cleanup, number extraction, link building
+- `MainActivityTest` (20, Robolectric): the real screen on Android 8, 14 and 15, covering buttons, the exact intents sent to
+  WhatsApp and Business, errors, share and text-selection, paste, templates, history, About and privacy link,
+  rotation, Hindi, dark mode, and edge-to-edge layout
+- `PlayScreenshots` (3): renders the Play Store screenshots to `build/play-screenshots/`
 
 ## Build
 
@@ -31,11 +35,11 @@ See the root README. Play Store steps: root `PLAY_STORE_GUIDE.md` and `play/dire
 
 ## What was verified and what wasn't
 
-Verified in the authoring environment: unit tests (16/16), Android lint (0 errors), release
-AAB/APK build signed with the upload key, APK metadata (package, labels, no permissions).
+Verified in the authoring environment: 39 tests (unit and Robolectric) pass, Android lint has 0 errors, and the release
+AAB/APK build signed with the upload key. APK metadata checked: package, labels, no permissions.
 
-**Not verified:** running it on a real phone or emulator (no emulator was available), and actually
-opening chats in WhatsApp or WhatsApp Business. Test on a device before publishing:
+**Not verified:** a real phone, and WhatsApp itself receiving the link. The tests check the exact intent
+(`https://wa.me/...` with package `com.whatsapp` / `com.whatsapp.w4b`) but not WhatsApp's response. Test on a device before publishing:
 
 - [ ] Both apps installed: each button opens the right app with the number and message pre-filled
 - [ ] Only one app installed: the other button is disabled; the keyboard "Go" key opens the installed one

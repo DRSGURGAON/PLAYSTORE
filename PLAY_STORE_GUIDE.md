@@ -31,8 +31,8 @@ financial features, health.
 - Title / short / full description: `play/direct-chat/listing/en-IN/`
 - Hindi translation add karo (Manage translations > Hindi – hi-IN): `listing/hi-IN/`
 - App icon: `graphics/icon-512.png` · Feature graphic: `graphics/feature-graphic-1024x500.png`
-- **Phone screenshots (min 2, max 8)**: apne phone par app chala kar lo. Do screens lo:
-  number + message bhara hua, aur "Recent" list. Bina tasveer ke submit nahi hoga.
+- **Phone screenshots (min 2, max 8)**: `graphics/screenshots/` (1-en, 2-hi, 3-en-dark; 1080×1920).
+  These are the app's real screens, rendered by the tests. Phone screenshots can be added too.
 - Category: Communication · Contact email daalo
 
 ## 4. Closed testing: personal account ke liye zaroori

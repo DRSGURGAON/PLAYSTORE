@@ -19,6 +19,7 @@
     <string name="none_installed">Neither app is installed on this phone. You can still share the chat link.</string>
     <string name="share_link">Share chat link</string>
     <string name="history">Recent</string>
+    <string name="just_now">just now</string>
     <string name="label_whatsapp">WhatsApp</string>
     <string name="label_business">Business</string>
     <string name="error_empty">Enter a phone number.</string>

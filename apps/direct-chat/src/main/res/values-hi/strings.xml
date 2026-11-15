@@ -17,6 +17,7 @@
     <string name="none_installed">इस फ़ोन में दोनों में से कोई ऐप नहीं है। आप चैट लिंक फिर भी शेयर कर सकते हैं।</string>
     <string name="share_link">चैट लिंक शेयर करें</string>
     <string name="history">हाल के नंबर</string>
+    <string name="just_now">अभी</string>
     <string name="label_whatsapp">WhatsApp</string>
     <string name="label_business">Business</string>
     <string name="error_empty">फ़ोन नंबर डालें।</string>
