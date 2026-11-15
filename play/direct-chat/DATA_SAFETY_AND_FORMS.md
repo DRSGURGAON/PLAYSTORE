@@ -4,7 +4,7 @@ Copy these into Play Console > **App content**. They match what the code actuall
 (no permissions, no network, nothing collected). If a feature changes, update these first.
 
 ## Privacy policy
-`https://drsgurgaon.github.io/playstore/privacy/direct-chat.html`
+`https://drsgurgaon.github.io/PLAYSTORE/privacy/direct-chat.html`
 (GitHub Pages; see README "Privacy policy hosting".)
 
 ## Ads

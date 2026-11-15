@@ -5,7 +5,7 @@
     <string name="label_number">Phone number (no need to save it)</string>
     <string name="hint_cc">Code</string>
     <string name="plus" translatable="false">+</string>
-    <string name="privacy_url" translatable="false">https://drsgurgaon.github.io/playstore/privacy/direct-chat.html</string>
+    <string name="privacy_url" translatable="false">https://drsgurgaon.github.io/PLAYSTORE/privacy/direct-chat.html</string>
     <string name="history_meta">%1$s · %2$s</string>
     <string name="hint_number">98765 43210</string>
     <string name="paste">Paste number</string>
