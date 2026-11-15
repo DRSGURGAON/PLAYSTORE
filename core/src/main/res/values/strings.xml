@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="mmn_company" translatable="false">My Media Nation</string>
-    <string name="mmn_privacy_policy">Privacy policy</string>
-    <string name="mmn_about_footer">Version %1$s\n\n%2$s\n\nMade by My Media Nation.</string>
-</resources>

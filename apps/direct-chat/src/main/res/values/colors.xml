@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="UnusedResources">
-    <!-- App colours match the icon (orange→pink). They override the shared :core brand colours. -->
-    <color name="primary">#E11D48</color>       <!-- white text on it: 4.7:1 -->
-    <color name="primary_dark">#BE123C</color>
-    <color name="accent">#F97316</color>
-    <color name="accent_night">#FB7185</color>
-    <color name="business">#37474F</color>
-</resources>
