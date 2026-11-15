@@ -61,6 +61,6 @@ intellectual-property policy ki wajah se reject ya strike ka risk hai. Rejection
 naam badlo:
 - `apps/direct-chat/src/main/res/values/strings.xml` > `app_name`
 - `play/direct-chat/listing/*/title.txt`
-- graphics dobara banao: `node tools/render-play-graphics.js play/direct-chat "Naya Naam" "बिना नंबर सेव किए चैट करें" "Chat without saving the number"`
+- graphics dobara banao: `node tools/render-play-graphics.js play/direct-chat ./icons/direct-chat.js "Naya Naam" "बिना नंबर सेव किए चैट करें" "Chat without saving the number"`
 - privacy page ka title
 App ID (`com.mymedianation.directchat`) kabhi nahi badalti, isliye naam badalna safe hai.
