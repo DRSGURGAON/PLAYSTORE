@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand colours shared by all apps. An app can override any of them. -->
+    <color name="primary">#00695C</color>
+    <color name="primary_dark">#004D40</color>
+    <color name="accent">#00897B</color>
+    <color name="accent_night">#4DB6AC</color>
+    <color name="error">#C62828</color>
+    <color name="icon_bg">#00796B</color>
+</resources>
