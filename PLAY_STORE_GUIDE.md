@@ -12,7 +12,7 @@ This guide works for every app in this repo. The examples are for **What'z Direc
    - `MMN_UPLOAD_KEYSTORE_PASSWORD`, `MMN_UPLOAD_KEY_PASSWORD`: details file wala password
    - `MMN_UPLOAD_KEY_ALIAS`: `upload`
    Iske baad har push par **Actions > Android apps > play-bundles** mein signed `.aab` milega.
-3. **Privacy policy page**: privacy page mein `SUPPORT_EMAIL` badlo, phir
+3. **Privacy policy page** (support email: blogspriyankakumari@gmail.com):
    Settings > Pages > Source: *Deploy from a branch* > `main` / `/docs`.
    GitHub Free plan par Pages ke liye repo **public** hona chahiye (code mein koi secret nahi hai).
 

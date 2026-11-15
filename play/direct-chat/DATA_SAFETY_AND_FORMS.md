@@ -5,7 +5,7 @@ Copy these into Play Console > **App content**. They match what the code actuall
 
 ## Privacy policy
 `https://drsgurgaon.github.io/playstore/privacy/direct-chat.html`
-(GitHub Pages; see README "Privacy policy hosting". Replace SUPPORT_EMAIL in the page first.)
+(GitHub Pages; see README "Privacy policy hosting".)
 
 ## Ads
 **No**, the app does not contain ads.
@@ -41,5 +41,5 @@ Copy these into Play Console > **App content**. They match what the code actuall
 
 ## Store settings
 - App category: **Communication** (or Tools)
-- Contact email: **required**, and shown publicly
+- Contact email: **blogspriyankakumari@gmail.com** (shown publicly)
 - Tags: Communication, Productivity
